@@ -1,5 +1,6 @@
 ---
 - name: Install Apache web server
+  hosts: services_hosts
   become: yes
   tasks:
     - name: Update apt package cache
