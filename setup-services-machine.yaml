@@ -1,0 +1,7 @@
+---
+- name: Setup services machine
+  hosts: services_hosts
+  gather_facts: no
+  tasks:
+    - name: Include Apache installation playbook
+      include_tasks: playbooks/install_apache.yaml
