@@ -3,8 +3,13 @@
   hosts: services_hosts
   gather_facts: no
   tasks:
-    - name: Include Apache installation playbook
+    - name: Include apache installation playbook
       include_tasks: playbooks/install_apache.yaml
 
-    - name: Include Bind9 installation playbook
+    - name: Include bind installation playbook
       include_tasks: playbooks/install_bind.yaml
+
+    - name: Copy bind server configuration files
+      ansible.builtin.copy:
+        src: /tmp/bind/
+        dest: /etc/bind/
