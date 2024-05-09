@@ -13,3 +13,4 @@
       ansible.builtin.copy:
         src: /tmp/bind/
         dest: /etc/bind/
+        remote_src: true
