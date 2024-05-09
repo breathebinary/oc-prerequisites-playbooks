@@ -1,5 +1,5 @@
 ---
-- name: Install Apache web server
+- name: Install bind server
   become: yes
   tasks:
     - name: Update apt package cache
