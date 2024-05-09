@@ -10,6 +10,7 @@
       include_tasks: playbooks/install_bind.yaml
 
     - name: Copy bind server configuration files
+      become: true
       ansible.builtin.copy:
         src: /tmp/bind/
         dest: /etc/bind/
