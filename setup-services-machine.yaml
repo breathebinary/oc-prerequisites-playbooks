@@ -5,3 +5,6 @@
   tasks:
     - name: Include Apache installation playbook
       include_tasks: playbooks/install_apache.yaml
+
+    - name: Include Bind9 installation playbook
+      include_tasks: playbooks/install_bind.yaml
