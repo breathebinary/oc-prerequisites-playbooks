@@ -29,7 +29,7 @@
       ansible.builtin.file:
         path: /etc/bind/rndc.key
         owner: bind
-        group: group
+        group: bind
 
     - name: Change file permissions for zoned directory
       become: true
