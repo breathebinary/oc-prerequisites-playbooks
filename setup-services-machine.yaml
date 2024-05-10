@@ -45,5 +45,5 @@
       become: true
       service:
         name: named
-        state: started
+        state: restarted
         enabled: yes
