@@ -15,3 +15,22 @@
         src: /tmp/bind/
         dest: /etc/bind/
         remote_src: true
+        owner: root
+        group: root
+
+    - name: Change file permissions for named.conf
+      become: true
+      ansible.builtin.file:
+        path: /etc/bind/named.conf
+        mode: '0644'
+
+    - name: Change file permissions for zoned directory
+      become: true
+      ansible.builtin.file:
+        path: /etc/bind/zones
+        mode: '1755'
+    
+    - name: Restart service httpd, in all cases
+      ansible.builtin.service:
+        name: named
+        state: restarted
